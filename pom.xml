@@ -15,6 +15,7 @@
     <description>SpringCloudAlibaba</description>
     <modules>
         <module>nacos-service-9000</module>
+        <module>nacos-service-9001</module>
         <module>nacos-consumer-9100</module>
     </modules>
     <packaging>pom</packaging>
