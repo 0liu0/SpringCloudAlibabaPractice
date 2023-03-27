@@ -17,6 +17,7 @@
         <module>nacos-service-9000</module>
         <module>nacos-service-9001</module>
         <module>nacos-consumer-9100</module>
+        <module>nacos-sentinel-consumer-9101</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
