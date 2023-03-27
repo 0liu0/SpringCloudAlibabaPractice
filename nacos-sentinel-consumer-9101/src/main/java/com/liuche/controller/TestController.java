@@ -1,6 +1,7 @@
 package com.liuche.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.liuche.service.FeignService9100;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,12 +30,12 @@ public class TestController {
     }
 
     @GetMapping("/sentinel-test")
-    @SentinelResource(value = "sentinelTest",fallback = "sentinelTestFallBack",blockHandler = "sentinelTestBlockHandler")
+    // @SentinelResource(value = "sentinelTest",fallback = "sentinelTestFallBack",blockHandler = "sentinelTestBlockHandler")
     public String sentinelTest() throws InterruptedException {
         String str = "这是sentinel-test方法";
         return str;
     }
-    public String sentinelTestBlockHandler() {
+    public String sentinelTestBlockHandler(BlockException e) {
         return "这是sentinelTestBlockHandler";
     }
 
