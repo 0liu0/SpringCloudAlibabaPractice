@@ -54,4 +54,20 @@ public class TestController {
         return str;
     }
 
+    @GetMapping("/flowThread")
+    @SentinelResource(value = "flowThread",fallback = "sentinelTestFallBack",blockHandler = "sentinelTestBlockHandler")
+    public String flowThread() throws InterruptedException {
+        String str = "这是sentinel-test方法";
+        Thread.sleep(2000);
+        return str;
+    }
+
+    @GetMapping("/err")
+    @SentinelResource(value = "err",fallback = "sentinelTestFallBack",blockHandler = "sentinelTestBlockHandler")
+    public String err() throws InterruptedException {
+        int i = 1/0;
+        String str = "这是err方法";
+        return str;
+    }
+
 }
