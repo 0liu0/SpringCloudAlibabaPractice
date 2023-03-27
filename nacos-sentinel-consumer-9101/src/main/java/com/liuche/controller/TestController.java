@@ -29,10 +29,16 @@ public class TestController {
     }
 
     @GetMapping("/sentinel-test")
-    @SentinelResource("sentinelTest")
-    public String sentinelTest() {
+    @SentinelResource(value = "sentinelTest",fallback = "sentinelTestFallBack",blockHandler = "sentinelTestBlockHandler")
+    public String sentinelTest() throws InterruptedException {
         String str = "这是sentinel-test方法";
         return str;
     }
+    public String sentinelTestBlockHandler() {
+        return "这是sentinelTestBlockHandler";
+    }
 
+    public String sentinelTestFallBack() {
+        return "这是sentinelTestFallBack";
+    }
 }
