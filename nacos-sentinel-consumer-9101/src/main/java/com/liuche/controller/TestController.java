@@ -42,4 +42,16 @@ public class TestController {
     public String sentinelTestFallBack() {
         return "这是sentinelTestFallBack";
     }
+
+    @GetMapping("/test01")
+    public String test01() {
+        String str = "这是test01方法";
+        return str;
+    }
+    @GetMapping("/test02")
+    public String test02() {
+        String str = "这是test02方法";
+        return str;
+    }
+
 }
