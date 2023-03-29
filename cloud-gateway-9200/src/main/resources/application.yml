@@ -1,0 +1,16 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: cloud-gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          uri: http://127.0.0.1:9100
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
