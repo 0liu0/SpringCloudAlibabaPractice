@@ -69,5 +69,9 @@ public class TestController {
         String str = "这是err方法";
         return str;
     }
+    @GetMapping("/test")
+    public String test () {
+        return feignService.test();
+    }
 
 }

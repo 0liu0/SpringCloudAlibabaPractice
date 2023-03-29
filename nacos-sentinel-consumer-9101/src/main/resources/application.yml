@@ -9,3 +9,7 @@ spring:
         dashboard: 127.0.0.1:8017
         # 指定应用与Sentinel控制台交互的端口，应用本地会起一个该端口占用的HttpServer,一般为8719，默认也是8719
         port: 8719
+feign:
+  sentinel:
+    # openfeign整合sentinel
+    enabled: true

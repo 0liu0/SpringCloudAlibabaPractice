@@ -15,4 +15,9 @@ public class TestService {
     public String getPort() {
         return "我是服务提供者，端口号为：" + port;
     }
+    @GetMapping("/test")
+    public String test() {
+        int i = 1/0;
+        return "我是服务提供者，test";
+    }
 }
