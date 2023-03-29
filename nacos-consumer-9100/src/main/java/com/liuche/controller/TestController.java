@@ -19,7 +19,7 @@ public class TestController {
 
     @GetMapping("/get-server-port")
     public String getServerPort() {
-        return feignService.getPort();
+        return "9100" + feignService.getPort();
     }
 
     @GetMapping("/get-person-name")

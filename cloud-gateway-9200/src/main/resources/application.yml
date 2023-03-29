@@ -6,10 +6,12 @@ spring:
   main:
     web-application-type: reactive
   cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
     gateway:
       routes:
         - id: path_route
-          uri: http://127.0.0.1:9100
+          uri: lb://nacos-consumer # lb指的是从nacos中按照名称获取微服务,并遵循负载均衡策略
           predicates:
             - Path=/test/**
           filters:
