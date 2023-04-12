@@ -16,3 +16,7 @@ spring:
             - Path=/test/**
           filters:
             - StripPrefix=1
+    # 整合sentinel
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8017

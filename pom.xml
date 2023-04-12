@@ -19,7 +19,7 @@
         <module>nacos-consumer-9100</module>
         <module>nacos-sentinel-consumer-9101</module>
         <module>cloud-gateway-9200</module>
-        <module>test</module>
+<!--        <module>test</module>-->
     </modules>
     <packaging>pom</packaging>
     <properties>
